@@ -55,10 +55,24 @@ public class DimmedView: UIView {
 
     // MARK: - Initializers
 
-    init(dimColor: UIColor = UIColor.black.withAlphaComponent(0.7)) {
+    init(dimColor: UIColor = UIColor.black.withAlphaComponent(0.1)) {
         super.init(frame: .zero)
+        
+        let blurEffect = UIBlurEffect(style: .regular)
+        let blurView = UIVisualEffectView(effect: blurEffect)
+        blurView.translatesAutoresizingMaskIntoConstraints = false
+        
         alpha = 0.0
         backgroundColor = dimColor
+        
+        addSubview(blurView)
+        NSLayoutConstraint.activate([
+            blurView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            blurView.topAnchor.constraint(equalTo: self.topAnchor),
+            blurView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            blurView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+        ])
+        
         addGestureRecognizer(tapGesture)
     }
 

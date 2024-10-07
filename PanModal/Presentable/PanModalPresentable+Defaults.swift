@@ -32,7 +32,7 @@ public extension PanModalPresentable where Self: UIViewController {
     }
 
     var cornerRadius: CGFloat {
-        return 8.0
+        return 50.0
     }
 
     var springDamping: CGFloat {
