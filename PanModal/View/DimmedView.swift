@@ -58,7 +58,7 @@ public class DimmedView: UIView {
     init(dimColor: UIColor = UIColor.black.withAlphaComponent(0.1)) {
         super.init(frame: .zero)
         
-        let blurEffect = UIBlurEffect(style: .regular)
+        let blurEffect = UIBlurEffect(style: .dark)
         let blurView = UIVisualEffectView(effect: blurEffect)
         blurView.translatesAutoresizingMaskIntoConstraints = false
         
